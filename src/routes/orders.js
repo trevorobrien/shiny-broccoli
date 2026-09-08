@@ -12,12 +12,11 @@ router.post('/', (req, res) => {
   res.status(201).json(order)
 })
 
-// Bug: calculates total incorrectly (multiplies by 2 instead of quantity)
 router.get('/:id/total', (req, res) => {
   const order = orders.find(o => o.id === parseInt(req.params.id))
   if (!order) return res.status(404).json({ error: 'Order not found' })
   const pricePerItem = 9.99
-  const total = pricePerItem * 2
+  const total = pricePerItem * order.quantity
   res.json({ total })
 })
 
