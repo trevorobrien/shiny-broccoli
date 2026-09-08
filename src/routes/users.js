@@ -3,13 +3,12 @@ const router = express.Router()
 
 const users = []
 
-// Bug: returns wrong status code on success (should be 201)
 router.post('/', (req, res) => {
   const { name, email } = req.body
   // Missing validation: name and email can be anything, including undefined
   const user = { id: users.length + 1, name, email }
   users.push(user)
-  res.status(200).json(user)
+  res.status(201).json(user)
 })
 
 router.get('/:id', (req, res) => {
