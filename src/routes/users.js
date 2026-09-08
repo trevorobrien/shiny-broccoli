@@ -2,7 +2,6 @@ const express = require('express')
 const router = express.Router()
 
 const users = []
-const unused = 'this variable is never used'
 
 // Bug: returns wrong status code on success (should be 201)
 router.post('/', (req, res) => {
