@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 const users = [];
-const unused = "this variable is never used";
 
 router.post("/", (req, res) => {
   const { name, email } = req.body;
