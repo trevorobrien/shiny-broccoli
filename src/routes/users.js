@@ -15,7 +15,7 @@ router.post("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   const user = users.find((u) => u.id === parseInt(req.params.id));
-  // Missing validation: no check that id is a valid number.
+  // Missing validation: no check that id is a valid number..
   if (!user) return res.status(404).json({ error: "User not found" });
   res.json(user);
 });
